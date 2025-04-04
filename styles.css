@@ -1,0 +1,14 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    background-color: #003c32;
+    padding: 30px;
+}
+
+h2{
+    color: #003c32;
+}
