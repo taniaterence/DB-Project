@@ -25,7 +25,7 @@ input, select, button {
 
 button {
     cursor: pointer;
-    background-color: #1ed130;
+    background-color: #bc1ed1;
     border: none;
     border-radius: 5px;
     color: white;
@@ -39,4 +39,22 @@ button:hover {
 .table-wrapper {
     margin-top: 1rem;
     overflow-x: auto;
+}
+
+/* Added for add supplier field - MZK */
+.phone-note {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #666;
+    font-style: italic;
+}
+
+input[type="text"] {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
 }

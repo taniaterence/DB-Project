@@ -41,11 +41,20 @@
         <hr>
 
         <!-- Add Supplier -->
+         <!-- Added Phone, email fields - MZK-->
         <section>
             <h2>➕ Add Supplier</h2>
             <p>Enter the name of a new supplier:</p>
             <label for="supplier">Supplier Name:</label>
             <input type="text" id="supplier" name="supplier" placeholder="e.g., Acme Corp">
+            
+            <label for="supplierEmail">Supplier Email:</label>
+            <input type="text" id="supplierEmail" name="supplierEmail" placeholder="e.g., contact@acme.com">
+            
+            <label for="supplierPhone">Supplier Phone(s):</label>
+            <input type="text" id="supplierPhone" name="supplierPhone" placeholder="e.g., 123456789, 987654321">
+            <small class="phone-note">You can add multiple phone numbers separated by commas (e.g., 123456789, 987654321)</small>
+            
             <button>Add Supplier</button>
         </section>
 
@@ -83,6 +92,6 @@
         <br><br><br>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script> <!--Renamed to main.js from script.js to make it use the proper js file - MZK -->
 </body>
 </html>

@@ -57,11 +57,19 @@ document.querySelectorAll("button")[0].addEventListener("click", () => {
 
 
 // Add click event to "Add Supplier" button
+// Added the phone and email fields - MZK
 document.querySelectorAll("button")[1].addEventListener("click", async () => {
     const supplierName = document.getElementById("supplier").value.trim();
-
+    const supplierEmail = document.getElementById("supplierEmail").value.trim();
+    const supplierPhone = document.getElementById("supplierPhone").value.trim();
+    
     if (!supplierName) {
         alert("Please enter a supplier name.");
+        return;
+    }
+
+    if (supplierEmail && !supplierEmail.includes('@')) {
+        alert("Please enter a valid email address.");
         return;
     }
 
@@ -72,13 +80,27 @@ document.querySelectorAll("button")[1].addEventListener("click", async () => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ name: supplierName })
+            body: JSON.stringify({ 
+                name: supplierName,
+                email: supplierEmail,
+                phone: supplierPhone
+            })
         });
 
         const result = await response.json();
 
         if (response.ok) {
             alert("Supplier added successfully!");
+            // Clear the input fields after successful addition
+            document.getElementById("supplier").value = "";
+            document.getElementById("supplierEmail").value = "";
+            document.getElementById("supplierPhone").value = "";
+            
+            // Refresh the suppliers table if it's currently displayed
+            const tableName = document.getElementById("table").value;
+            if (tableName.toLowerCase() === "suppliers") {
+                fetchTableData(tableName);
+            }
         } else {
             alert("Failed to add supplier: " + result.message);
         }
